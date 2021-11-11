@@ -1,5 +1,5 @@
 #
-# system.prop for land
+# system.prop for E
 #
 
 persist.sys.fflag.override.settings_provider_model=false

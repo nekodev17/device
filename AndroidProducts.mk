@@ -5,4 +5,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_land.mk
+
+    $(LOCAL_DIR)/aosp_E.mk

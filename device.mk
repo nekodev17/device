@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/xiaomi/land
+LOCAL_PATH := device/10or/E
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -25,8 +25,8 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_AAPT_PREBUILT_DPI := hdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
 
 # Build
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
@@ -177,11 +177,6 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.4-service.clearkey
 
-# Fingerprint sensor
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.2-service.custom \
-    android.hardware.biometrics.fingerprint@2.2.vendor
-
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
@@ -280,7 +275,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.xiaomi_land
+    android.hardware.light@2.0-service.E
 
 # Libshim
 PRODUCT_PACKAGES += \
@@ -396,10 +391,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/targetconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/targetconfig.xml \
     $(LOCAL_PATH)/configs/perf/targetresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/targetresourceconfigs.xml
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
 # QCOM
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
@@ -499,10 +490,6 @@ PRODUCT_PACKAGES += \
     timekeep \
     TimeKeep
 
-# Touch HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.land
-
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
@@ -545,7 +532,7 @@ PRODUCT_PACKAGES += \
     libaacwrapper
 
 # Inherit common proprietary files
-$(call inherit-product-if-exists, vendor/xiaomi/land/land-vendor.mk)
+$(call inherit-product-if-exists, vendor/10or/E/E-vendor.mk)
 
 # XiaomiParts
 PRODUCT_PACKAGES += \

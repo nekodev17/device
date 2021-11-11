@@ -52,7 +52,7 @@ void init_target_properties()
     std::string buf;
 
     std::string product = GetProperty("ro.product.name", "");
-    if (product.find("land") == std::string::npos)
+    if (product.find("E") == std::string::npos)
         return;
 
     fin.open("/proc/cmdline");
