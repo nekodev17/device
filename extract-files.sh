@@ -59,34 +59,8 @@ fi
 function blob_fixup() {
     case "${1}" in
 
-    vendor/bin/gx_fpcmd|vendor/bin/gx_fpd)
-        patchelf --remove-needed "libbacktrace.so" "${2}"
-        patchelf --remove-needed "libunwind.so" "${2}"
-        ;;
-    
-    vendor/bin/gx_fpd)
-        patchelf --add-needed "liblog.so" "${2}"
-        ;;
-
-    vendor/lib64/hw/fingerprint.goodix.so)
-        patchelf --remove-needed "libandroid_runtime.so" "${2}"
-        ;;
-
-    vendor/lib/libmmcamera2_stats_modules.so)
-        sed -i "s|libgui.so|libwui.so|g" "${2}"
-        patchelf --replace-needed "libandroid.so" "libshim_android.so" "${2}"
-        ;;
-
-    vendor/lib/libmmsw_detail_enhancement.so|vendor/lib/libmmsw_platform.so|vendor/lib64/libmmsw_detail_enhancement.so|vendor/lib64/libmmsw_platform.so)
-        sed -i "s|libgui.so|libwui.so|g" "${2}"
-        ;;
-
-    vendor/lib/libFaceGrade.so|vendor/lib/libarcsoft_beauty_shot.so)
-        patchelf --remove-needed "libandroid.so" "${2}"
-        ;;
-
-    vendor/lib64/libfpservice.so)
-        patchelf --add-needed "libshim_binder.so" "${2}"
+    vendor/lib/libmpbase.so)
+            "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
         ;;
 
     esac
