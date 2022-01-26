@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# LineageOS (crDroid)
+# Project-Xtended
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_E.mk
+    $(LOCAL_DIR)/xtended_E.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_E-userdebug \
-    lineage_E-user \
-    lineage_E-eng
+    xtended_E-userdebug \
+    xtended_E-user \
+    xtended_E-eng
